@@ -9,7 +9,7 @@ router.get('/', async(req , res) => {
     }catch{
         books= []
     }
-    res.render('index',{books: books})
+    res.render('index', {books: books})
 })
 
 module.exports = router

@@ -7,15 +7,15 @@ const multer=require('multer')
 const path = require('path')
 const Book = require('../models/book')
 const uploadPath = path.join('public',Book.coverImageBasePath)
-const imageMimeTypes = ['images/jpeg','images/png','images/gif']
-//const imageMimeTypes = ['image/jpeg', 'image/png', 'image/gif']
+//const imageMimeTypes = ['images/jpeg','images/png','images/gif']
+const imageMimeTypes = ['image/jpeg', 'image/png', 'image/gif']
 const Author = require('../models/author')
 const req = require('express/lib/request')
 const { remove } = require('../models/author')
 const upload = multer({
     dest: uploadPath,
     fileFilter: (req,file,callback)=>{
-        callback(null, imageMimeTypes.includes(file.mimeType) )
+        callback(null, imageMimeTypes.includes(file.mimetype) )
     }
 })
 
